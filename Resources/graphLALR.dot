@@ -1,0 +1,62 @@
+digraph {
+    I0     -> I23_1[label="instr"];
+    I0     -> I26_2[label="try"];
+    I0     -> I37[label="I"];
+ 
+    I26_2  -> I9_3[label="try"];
+    I26_2  -> I12_7[label="instr"];
+    I26_2  -> I27_21[label="I"];
+
+    I9_3   -> I9_3[label="try"];
+    I9_3   -> I10_4[label="I"];
+    I9_3   -> I12_7[label="instr"];
+
+    I10_4  -> I14_5[label=";"];
+    I10_4  -> I11_8[label="catch"];
+
+    I14_5  -> I9_3[label="try"];
+    I14_5  -> I15_6[label="I"];
+    I14_5  -> I12_7[label="instr"];
+
+    I15_6  -> I14_5[label=";"];
+
+    I11_8  -> I9_3[label="try"];
+    I11_8  -> I12_7[label="instr"];
+    I11_8  -> I13_18[label="I"];
+
+    I13_18 -> I14_5[label=";"];
+    I13_18 -> I16_19[label="finally"];
+
+    I16_19 -> I9_3[label="try"];
+    I16_19 -> I12_7[label="instr"];
+    I16_19 -> I17_20[label="I"];
+
+    I17_20 -> I14_5[label=";"];
+
+    I27_21 -> I14_5[label=";"];
+    I27_21 -> I28_22[label="catch"];
+
+    I28_22 -> I23_1[label="instr"];
+    I28_22 -> I26_2[label="try"];
+    I28_22 -> I29_24[label="I"];
+
+    I29_24 -> I25_35[label=";"];
+    I29_24 -> I30_33[label="finally"];
+
+    I25_35 -> I23_1[label="instr"];
+    I25_35 -> I26_2[label="try"];
+
+    I30_33 -> I23_1[label="instr"];
+    I30_33 -> I26_2[label="try"];
+    I30_33 -> I31_34[label="I"];
+    I25_35 -> I32_36[label="I"];
+
+    I31_34 -> I25_35[label=";"];
+
+    I32_36 -> I25_35[label=";"];
+
+    I37    -> I25_35[label=";"];
+
+    I37 -> I38[label="$"]
+
+}

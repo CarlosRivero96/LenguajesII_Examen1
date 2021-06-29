@@ -1,0 +1,35 @@
+digraph {
+    Finstr -> FtryGcatch;
+    Finstr -> FcatchGfinally;
+    Finstr -> Gsemicolon;
+    Finstr -> Gdollar;
+    
+    Ginstr -> FtryGcatch;
+    Ginstr -> FcatchGfinally;
+    Ginstr -> Ffinally;
+    Ginstr -> Fsemicolon;
+    Ginstr -> Fdollar;
+    
+    Gtry -> FtryGcatch;
+    Gtry -> FcatchGfinally;
+    Gtry -> Fsemicolon;
+    Gtry -> Fdollar;
+    
+    FcatchGfinally -> FtryGcatch;
+    FcatchGfinally -> Gdollar;
+    
+    Ffinally -> Gtry;
+    Ffinally -> FtryGcatch;
+    Ffinally -> FcatchGfinally;
+    Ffinally -> Gsemicolon;
+    Ffinally -> Gdollar;
+
+    Fsemicolon -> FtryGcatch
+    Fsemicolon -> FcatchGfinally
+    Fsemicolon -> Gsemicolon;
+    Fsemicolon -> Gdollar;
+
+    Gsemicolon -> FtryGcatch;
+    Gsemicolon -> FcatchGfinally;
+    Gsemicolon -> Fdollar;
+}

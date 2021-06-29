@@ -1,0 +1,7 @@
+PREC a = b
+PREC b = a
+PREC b > c
+PREC c = c
+PREC c > a
+BUILD
+EXIT

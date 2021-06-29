@@ -1,0 +1,23 @@
+RULE E E + E
+RULE E E * E
+RULE E n
+INIT E
+PREC + > $
+PREC n > $
+PREC * > $
+PREC n > *
+PREC n > +
+PREC * < n
+PREC + < n
+PREC + < *
+PREC + > +
+PREC * > *
+PREC $ < n
+PREC $ < +
+PREC $ < *
+BUILD
+PARSE n + n * n
+PARSE n + * n
+PARSE n
+PARSE a
+EXIT
