@@ -124,12 +124,12 @@ class precNode:
 
     def calcMaxPath(self, visited):
         if self in visited:
-            cycle = "_".join(self.names)
+            cycle = "/".join(self.names)
             for node in reversed(visited):
-                cycle = "_".join(node.names) + ' -> ' + cycle
+                cycle = "/".join(node.names) + ' -> ' + cycle
                 if(node.names == self.names):
                     break
-            print("\nERROR: Cycle present in graph:" + str(cycle))
+            print("ERROR: Cycle present in graph: " + str(cycle))
             sys.exit()
 
         else:
